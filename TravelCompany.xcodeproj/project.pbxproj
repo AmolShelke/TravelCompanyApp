@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		630099881E9CD8F500F86298 /* thirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 630099871E9CD8F500F86298 /* thirdViewController.m */; };
+		6300998B1E9CE42000F86298 /* bookTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6300998A1E9CE42000F86298 /* bookTableCell.m */; };
 		63BC32AD1E97611E00594E42 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BC32AC1E97611E00594E42 /* main.m */; };
 		63BC32B01E97611E00594E42 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BC32AF1E97611E00594E42 /* AppDelegate.m */; };
 		63BC32B31E97611F00594E42 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BC32B21E97611F00594E42 /* ViewController.m */; };
@@ -17,9 +19,14 @@
 		63BC32C71E97622700594E42 /* DatabaseLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BC32C61E97622700594E42 /* DatabaseLib.m */; };
 		63BC32CA1E976A0700594E42 /* secondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BC32C91E976A0700594E42 /* secondViewController.m */; };
 		63BC32CD1E97889C00594E42 /* myTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BC32CC1E97889C00594E42 /* myTableCell.m */; };
+		6B5BE32E1E9B90A900B68D11 /* firstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5BE32D1E9B90A900B68D11 /* firstViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		630099861E9CD8F500F86298 /* thirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = thirdViewController.h; sourceTree = "<group>"; };
+		630099871E9CD8F500F86298 /* thirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = thirdViewController.m; sourceTree = "<group>"; };
+		630099891E9CE42000F86298 /* bookTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bookTableCell.h; sourceTree = "<group>"; };
+		6300998A1E9CE42000F86298 /* bookTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bookTableCell.m; sourceTree = "<group>"; };
 		63BC32A81E97611E00594E42 /* TravelCompany.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelCompany.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BC32AC1E97611E00594E42 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		63BC32AE1E97611E00594E42 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -37,6 +44,8 @@
 		63BC32C91E976A0700594E42 /* secondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = secondViewController.m; sourceTree = "<group>"; };
 		63BC32CB1E97889C00594E42 /* myTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myTableCell.h; sourceTree = "<group>"; };
 		63BC32CC1E97889C00594E42 /* myTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myTableCell.m; sourceTree = "<group>"; };
+		6B5BE32C1E9B90A900B68D11 /* firstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = firstViewController.h; sourceTree = "<group>"; };
+		6B5BE32D1E9B90A900B68D11 /* firstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = firstViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,13 +84,19 @@
 				63BC32AF1E97611E00594E42 /* AppDelegate.m */,
 				63BC32B11E97611F00594E42 /* ViewController.h */,
 				63BC32B21E97611F00594E42 /* ViewController.m */,
+				6B5BE32C1E9B90A900B68D11 /* firstViewController.h */,
+				6B5BE32D1E9B90A900B68D11 /* firstViewController.m */,
 				63BC32C81E976A0700594E42 /* secondViewController.h */,
 				63BC32C91E976A0700594E42 /* secondViewController.m */,
+				630099861E9CD8F500F86298 /* thirdViewController.h */,
+				630099871E9CD8F500F86298 /* thirdViewController.m */,
 				63BC32C51E97622700594E42 /* DatabaseLib.h */,
 				63BC32C61E97622700594E42 /* DatabaseLib.m */,
 				63BC32B41E97612000594E42 /* Main.storyboard */,
 				63BC32CB1E97889C00594E42 /* myTableCell.h */,
 				63BC32CC1E97889C00594E42 /* myTableCell.m */,
+				630099891E9CE42000F86298 /* bookTableCell.h */,
+				6300998A1E9CE42000F86298 /* bookTableCell.m */,
 				63BC32B71E97612000594E42 /* Assets.xcassets */,
 				63BC32B91E97612100594E42 /* LaunchScreen.storyboard */,
 				63BC32BC1E97612100594E42 /* Info.plist */,
@@ -179,8 +194,11 @@
 			files = (
 				63BC32CD1E97889C00594E42 /* myTableCell.m in Sources */,
 				63BC32C71E97622700594E42 /* DatabaseLib.m in Sources */,
+				630099881E9CD8F500F86298 /* thirdViewController.m in Sources */,
 				63BC32B31E97611F00594E42 /* ViewController.m in Sources */,
+				6B5BE32E1E9B90A900B68D11 /* firstViewController.m in Sources */,
 				63BC32B01E97611E00594E42 /* AppDelegate.m in Sources */,
+				6300998B1E9CE42000F86298 /* bookTableCell.m in Sources */,
 				63BC32AD1E97611E00594E42 /* main.m in Sources */,
 				63BC32CA1E976A0700594E42 /* secondViewController.m in Sources */,
 			);
@@ -339,6 +357,7 @@
 				63BC32C11E97612100594E42 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

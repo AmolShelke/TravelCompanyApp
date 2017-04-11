@@ -29,12 +29,25 @@
         NSLog(@"Database Created Successfully");
     }
     else
+    {
         NSLog(@"Database creation failed");
+    }
+    
+    NSString *query1=@"create table if not exists booking(passanger_name text,passanger_no text,passanger_spot text)";
+    isSucess=[self executeQuery:query1];
+    if(isSucess)
+    {
+        
+        NSLog(@"Table Booking Created Successfully");
+    }
+    else
+        NSLog(@"Table Booking creation failed");
+    
 }
 -(NSString *)getDatabasePath
 {
     NSArray *dbArray=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) ;
-    NSString *dbPath=[[dbArray firstObject]stringByAppendingString:@"travelDataBase.db"];
+    NSString *dbPath=[[dbArray firstObject]stringByAppendingString:@"travelDataBase1.db"];
     return dbPath;
 }
 -(int)executeQuery:(NSString *)query
@@ -127,5 +140,68 @@
     }
     return priceArray;
 
+}
+
+-(NSArray*)getAllPassangerNameRecords:(NSString *)query
+{
+    NSMutableArray *nameArray=[[NSMutableArray alloc]init];
+    char const *cQuery=[query UTF8String];
+    char const *cDBPath=[[self getDatabasePath]UTF8String];
+    sqlite3_stmt *stmt;
+    if(sqlite3_open(cDBPath, &travelDB)==SQLITE_OK)
+    {
+        if(sqlite3_prepare_v2(travelDB, cQuery, -1, &stmt, NULL)==SQLITE_OK)
+        {
+            while(sqlite3_step(stmt)==SQLITE_ROW)
+            {
+                char const *temp=(char const *)sqlite3_column_text(stmt, 0);
+                NSString *obj=[NSString stringWithFormat:@"%s",temp];
+                [nameArray addObject:obj];
+            }
+        }
+    }
+    return nameArray;
+
+}
+-(NSArray *)getAllPassangerCnoRecords:(NSString *)query
+{
+    NSMutableArray *cnoArray=[[NSMutableArray alloc]init];
+    char const *cQuery=[query UTF8String];
+    char const *cDBPath=[[self getDatabasePath]UTF8String];
+    sqlite3_stmt *stmt;
+    if(sqlite3_open(cDBPath, &travelDB)==SQLITE_OK)
+    {
+        if(sqlite3_prepare_v2(travelDB, cQuery, -1, &stmt, NULL)==SQLITE_OK)
+        {
+            while(sqlite3_step(stmt)==SQLITE_ROW)
+            {
+                char const *temp=(char const *)sqlite3_column_text(stmt, 1);
+                NSString *obj=[NSString stringWithFormat:@"%s",temp];
+                [cnoArray addObject:obj];
+            }
+        }
+    }
+    return cnoArray;
+
+}
+-(NSArray *)getAllPassangerSpotRecords:(NSString *)query
+{
+    NSMutableArray *spotArray=[[NSMutableArray alloc]init];
+    char const *cQuery=[query UTF8String];
+    char const *cDBPath=[[self getDatabasePath]UTF8String];
+    sqlite3_stmt *stmt;
+    if(sqlite3_open(cDBPath, &travelDB)==SQLITE_OK)
+    {
+        if(sqlite3_prepare_v2(travelDB, cQuery, -1, &stmt, NULL)==SQLITE_OK)
+        {
+            while(sqlite3_step(stmt)==SQLITE_ROW)
+            {
+                char const *temp=(char const *)sqlite3_column_text(stmt, 2);
+                NSString *obj=[NSString stringWithFormat:@"%s",temp];
+                [spotArray addObject:obj];
+            }
+        }
+    }
+    return spotArray;
 }
 @end

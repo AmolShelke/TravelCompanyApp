@@ -20,4 +20,11 @@
 -(NSArray *)getAllPriceRecords:(NSString*)query;
 -(NSArray *)getAllDurationRecords:(NSString*)query;
 
+-(NSArray *)getAllPassangerNameRecords:(NSString*)query;
+-(NSArray *)getAllPassangerCnoRecords:(NSString*)query;
+-(NSArray *)getAllPassangerSpotRecords:(NSString*)query;
+
+
+
+
 @end

@@ -14,11 +14,27 @@
 - (IBAction)addButton:(id)sender;
 - (IBAction)updateButton:(id)sender;
 - (IBAction)deleteButton:(id)sender;
+- (IBAction)bookButton:(id)sender;
+- (IBAction)seeBookingButton:(id)sender;
+- (IBAction)logOutButton:(id)sender;
+
+
 @property NSArray *picArray;
 @property NSArray *priceArray;
 @property NSArray *durationArray;
 @property NSString *pic,*dur,*price;
+@property (strong, nonatomic) IBOutlet UIButton *deleteBut;
+@property (strong, nonatomic) IBOutlet UIButton *updateBut;
+@property (strong, nonatomic) IBOutlet UIButton *bookBut;
 
+@property (strong, nonatomic) IBOutlet UIButton *addBut;
+@property (weak, nonatomic) IBOutlet UIButton *seeBookBut;
+@property (weak, nonatomic) IBOutlet UIButton *logOutBut;
 
+@property NSString *isUser;
+@property NSString *username;
+@property NSString *cno;
+@property UITextField *mytextField;
+@property UITextField *numtextField;
 @end
 
