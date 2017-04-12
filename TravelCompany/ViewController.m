@@ -12,6 +12,7 @@
 #import "myTableCell.h"
 #import "firstViewController.h"
 #import "thirdViewController.h"
+#import "fourthViewController.h"
 @interface ViewController ()
 
 @end
@@ -126,7 +127,7 @@
     }
 
 }
--(void)showDetails
+/*-(void)showDetails
 {
     NSString *name=self.username;
     NSString *cno=self.cno;
@@ -179,7 +180,7 @@
     
     
     
-}
+}*/
 - (IBAction)bookButton:(id)sender
 {
    
@@ -199,7 +200,15 @@
     }
     else
     {
-        UIAlertController *alert=[UIAlertController alertControllerWithTitle:@"Book Now!!!" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+        
+        fourthViewController *fvc=[self.storyboard instantiateViewControllerWithIdentifier:@"fourthViewController"];
+        fvc.picnicSpot=self.pic;
+        fvc.dur=self.dur;
+        fvc.price=self.price;
+        [self.navigationController pushViewController:fvc animated:YES];
+        
+        
+        /*UIAlertController *alert=[UIAlertController alertControllerWithTitle:@"Book Now!!!" message:@"" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *bookAction=[UIAlertAction actionWithTitle:@"BOOK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         nil;
             self.username=self.mytextField.text;
@@ -207,7 +216,7 @@
             
             
             NSLog(@"user name:%@",self.username);
-            
+         
             if(self.mytextField.text.length>0&&self.numtextField.text.length==10)
             {
                 [self showDetails];
@@ -243,7 +252,7 @@
             [alert addAction:bookAction];
         [self presentViewController:alert animated:YES completion:^{
         nil;
-        }];
+        }];*/
     }
 }
 

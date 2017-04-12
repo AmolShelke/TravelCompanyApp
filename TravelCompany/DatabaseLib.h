@@ -23,7 +23,7 @@
 -(NSArray *)getAllPassangerNameRecords:(NSString*)query;
 -(NSArray *)getAllPassangerCnoRecords:(NSString*)query;
 -(NSArray *)getAllPassangerSpotRecords:(NSString*)query;
-
+-(NSArray *)getAllPassangerSeatRecords:(NSString*)query;
 
 
 

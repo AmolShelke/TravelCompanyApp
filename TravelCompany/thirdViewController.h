@@ -14,4 +14,5 @@
 @property NSArray *bookingNameArray;
 @property NSArray *bookingCnoArray;
 @property NSArray *bookingSpotArray;
+@property NSArray *bookingSeatArray;
 @end

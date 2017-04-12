@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *passangerNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *passangerCnoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *passangerSpotLabel;
+@property (weak, nonatomic) IBOutlet UILabel *passangerSeatnoLabel;
 
 @end

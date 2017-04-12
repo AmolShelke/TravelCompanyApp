@@ -24,6 +24,8 @@
    
     self.bookingSpotArray=[[DatabaseLib getSharedObj]getAllPassangerSpotRecords:query];
     
+    self.bookingSeatArray=[[DatabaseLib getSharedObj]getAllPassangerSeatRecords:query];
+    
     [self.bookingTableView reloadData];
     
 }
@@ -41,7 +43,7 @@
     cell.passangerNameLabel.text=[self.bookingNameArray objectAtIndex:indexPath.row];
     cell.passangerCnoLabel.text=[self.bookingCnoArray objectAtIndex:indexPath.row];
     cell.passangerSpotLabel.text=[self.bookingSpotArray objectAtIndex:indexPath.row];
-    
+    cell.passangerSeatnoLabel.text=[self.bookingSeatArray objectAtIndex:indexPath.row];
     return cell;
 }
 - (void)didReceiveMemoryWarning {

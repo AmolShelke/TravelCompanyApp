@@ -33,7 +33,7 @@
         NSLog(@"Database creation failed");
     }
     
-    NSString *query1=@"create table if not exists booking(passanger_name text,passanger_no text,passanger_spot text)";
+    NSString *query1=@"create table if not exists booking(passanger_name text,passanger_no text,passanger_spot text,seat_no Text)";
     isSucess=[self executeQuery:query1];
     if(isSucess)
     {
@@ -47,7 +47,7 @@
 -(NSString *)getDatabasePath
 {
     NSArray *dbArray=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) ;
-    NSString *dbPath=[[dbArray firstObject]stringByAppendingString:@"travelDataBase1.db"];
+    NSString *dbPath=[[dbArray firstObject]stringByAppendingString:@"travelDataBase2.db"];
     return dbPath;
 }
 -(int)executeQuery:(NSString *)query
@@ -203,5 +203,26 @@
         }
     }
     return spotArray;
+}
+-(NSArray *)getAllPassangerSeatRecords:(NSString *)query
+{
+    NSMutableArray *spotArray=[[NSMutableArray alloc]init];
+    char const *cQuery=[query UTF8String];
+    char const *cDBPath=[[self getDatabasePath]UTF8String];
+    sqlite3_stmt *stmt;
+    if(sqlite3_open(cDBPath, &travelDB)==SQLITE_OK)
+    {
+        if(sqlite3_prepare_v2(travelDB, cQuery, -1, &stmt, NULL)==SQLITE_OK)
+        {
+            while(sqlite3_step(stmt)==SQLITE_ROW)
+            {
+                char const *temp=(char const *)sqlite3_column_text(stmt, 3);
+                NSString *obj=[NSString stringWithFormat:@"%s",temp];
+                [spotArray addObject:obj];
+            }
+        }
+    }
+    return spotArray;
+    
 }
 @end
