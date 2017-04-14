@@ -15,4 +15,10 @@
 @property NSArray *bookingCnoArray;
 @property NSArray *bookingSpotArray;
 @property NSArray *bookingSeatArray;
+- (IBAction)deleteButton:(id)sender;
+
+- (IBAction)ClearAllButton:(id)sender;
+
+@property NSString *picName,*seatNo;
+
 @end

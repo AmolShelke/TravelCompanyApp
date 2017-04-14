@@ -135,7 +135,7 @@
                                         <rect key="frame" x="0.0" y="28" width="333" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YzV-Z6-GSk" id="9Zs-SE-i9S">
-                                            <rect key="frame" x="0.0" y="0.0" width="333" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="333" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YM3-QL-lJE">
@@ -525,27 +525,51 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ILh-QH-WGK">
+                                <rect key="frame" x="26" y="598" width="87" height="38"/>
+                                <color key="backgroundColor" red="0.95619416059999995" green="0.090837082979999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="deleteButton:" destination="9vL-ye-sRR" eventType="touchUpInside" id="vne-kx-JiS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GwG-RD-O3Y">
+                                <rect key="frame" x="260" y="598" width="87" height="38"/>
+                                <color key="backgroundColor" red="0.95619416059999995" green="0.090837082979999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Clear All"/>
+                                <connections>
+                                    <action selector="ClearAllButton:" destination="9vL-ye-sRR" eventType="touchUpInside" id="SjL-AS-LDl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.24412754179999999" green="0.99071460960000002" blue="0.51209372279999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="PTO-yG-9aw" firstAttribute="top" secondItem="Zrp-Bl-nBm" secondAttribute="bottom" constant="169" id="2ki-Rz-xT1"/>
+                            <constraint firstItem="UcD-en-S3j" firstAttribute="top" secondItem="ILh-QH-WGK" secondAttribute="bottom" constant="31" id="3Qt-Fq-cqy"/>
                             <constraint firstItem="UcD-en-S3j" firstAttribute="top" secondItem="hys-FV-qZS" secondAttribute="bottom" constant="458" id="6kA-Xh-3Bg"/>
+                            <constraint firstItem="UcD-en-S3j" firstAttribute="top" secondItem="GwG-RD-O3Y" secondAttribute="bottom" constant="31" id="9ur-eF-702"/>
                             <constraint firstAttribute="trailingMargin" secondItem="P9G-Co-d0b" secondAttribute="trailing" constant="103" id="C8R-wx-zVy"/>
                             <constraint firstItem="faY-BK-TVA" firstAttribute="leading" secondItem="Uut-zv-eLV" secondAttribute="leadingMargin" constant="269" id="CCX-eI-SzV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hys-FV-qZS" secondAttribute="trailing" constant="169" id="CZY-6c-hv3"/>
                             <constraint firstItem="UcD-en-S3j" firstAttribute="top" secondItem="HM2-op-L74" secondAttribute="bottom" constant="100" id="D3J-fm-PkM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PTO-yG-9aw" secondAttribute="trailing" constant="261" id="Dde-0b-P0x"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ILh-QH-WGK" secondAttribute="trailing" constant="246" id="F4B-6z-G2c"/>
+                            <constraint firstItem="ILh-QH-WGK" firstAttribute="leading" secondItem="Uut-zv-eLV" secondAttribute="leadingMargin" constant="10" id="FFt-OI-rXy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HM2-op-L74" secondAttribute="trailing" constant="10" id="MLe-6q-cQN"/>
                             <constraint firstItem="WNf-Gg-5qg" firstAttribute="top" secondItem="Zrp-Bl-nBm" secondAttribute="bottom" constant="27" id="Nbd-L8-Klb"/>
                             <constraint firstItem="P9G-Co-d0b" firstAttribute="top" secondItem="Zrp-Bl-nBm" secondAttribute="bottom" constant="169" id="P1w-uo-o3W"/>
+                            <constraint firstItem="GwG-RD-O3Y" firstAttribute="leading" secondItem="Uut-zv-eLV" secondAttribute="leadingMargin" constant="244" id="Stc-JR-6Ot"/>
                             <constraint firstItem="faY-BK-TVA" firstAttribute="top" secondItem="Zrp-Bl-nBm" secondAttribute="bottom" constant="169" id="T1o-qH-DaZ"/>
                             <constraint firstItem="UcD-en-S3j" firstAttribute="top" secondItem="PTO-yG-9aw" secondAttribute="bottom" constant="457" id="WXa-7d-9wN"/>
                             <constraint firstItem="WNf-Gg-5qg" firstAttribute="leading" secondItem="Uut-zv-eLV" secondAttribute="leadingMargin" constant="20" id="YZk-MB-ndX"/>
                             <constraint firstItem="hys-FV-qZS" firstAttribute="leading" secondItem="Uut-zv-eLV" secondAttribute="leadingMargin" constant="101" id="aLC-4I-Afq"/>
+                            <constraint firstItem="GwG-RD-O3Y" firstAttribute="top" secondItem="Zrp-Bl-nBm" secondAttribute="bottom" constant="578" id="apQ-gz-xqN"/>
                             <constraint firstItem="HM2-op-L74" firstAttribute="leading" secondItem="Uut-zv-eLV" secondAttribute="leadingMargin" constant="10" id="bU8-Sr-2Tj"/>
                             <constraint firstItem="UcD-en-S3j" firstAttribute="top" secondItem="faY-BK-TVA" secondAttribute="bottom" constant="456" id="bVP-x1-KFd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GwG-RD-O3Y" secondAttribute="trailing" constant="12" id="cul-7e-btR"/>
                             <constraint firstItem="UcD-en-S3j" firstAttribute="top" secondItem="P9G-Co-d0b" secondAttribute="bottom" constant="457" id="cxZ-x2-D7R"/>
                             <constraint firstItem="UcD-en-S3j" firstAttribute="top" secondItem="WNf-Gg-5qg" secondAttribute="bottom" constant="599.5" id="efM-HD-rCH"/>
+                            <constraint firstItem="ILh-QH-WGK" firstAttribute="top" secondItem="Zrp-Bl-nBm" secondAttribute="bottom" constant="578" id="nxF-eX-fae"/>
                             <constraint firstItem="P9G-Co-d0b" firstAttribute="leading" secondItem="Uut-zv-eLV" secondAttribute="leadingMargin" constant="194" id="oiO-Cr-Rdq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WNf-Gg-5qg" secondAttribute="trailing" id="pAN-TT-f6C"/>
                             <constraint firstItem="hys-FV-qZS" firstAttribute="top" secondItem="Zrp-Bl-nBm" secondAttribute="bottom" constant="168" id="scr-ch-RNR"/>

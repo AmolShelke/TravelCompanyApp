@@ -46,6 +46,12 @@
     cell.passangerSeatnoLabel.text=[self.bookingSeatArray objectAtIndex:indexPath.row];
     return cell;
 }
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    bookTableCell *cell=[tableView cellForRowAtIndexPath:indexPath];
+    self.picName=cell.passangerSpotLabel.text;
+    self.seatNo=cell.passangerSeatnoLabel.text;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -61,4 +67,52 @@
 }
 */
 
+- (IBAction)deleteButton:(id)sender
+{
+    NSString *query=[NSString stringWithFormat:@"delete from booking where passanger_spot=\"%@\" and seat_no=\"%@\"",self.picName,self.seatNo];
+  int success = [[DatabaseLib getSharedObj]executeQuery:query];
+    if(success)
+    {
+        NSLog(@"Record Deleted Successfully");
+        NSString *query=@"select * from booking";
+        self.bookingNameArray=[[DatabaseLib getSharedObj]getAllPassangerNameRecords:query];
+        
+        self.bookingCnoArray=[[DatabaseLib getSharedObj]getAllPassangerCnoRecords:query];
+        
+        self.bookingSpotArray=[[DatabaseLib getSharedObj]getAllPassangerSpotRecords:query];
+        
+        self.bookingSeatArray=[[DatabaseLib getSharedObj]getAllPassangerSeatRecords:query];
+        
+        [self.bookingTableView reloadData];
+        
+    }
+    else
+    {
+        NSLog(@"Record Not deleted");
+    }
+}
+
+- (IBAction)ClearAllButton:(id)sender
+{
+    NSString *query=@"delete from booking";
+    int success = [[DatabaseLib getSharedObj]executeQuery:query];
+    if(success)
+    {
+        NSLog(@"Table Deleted Successfully");
+        NSString *query=@"select * from booking";
+        self.bookingNameArray=[[DatabaseLib getSharedObj]getAllPassangerNameRecords:query];
+        
+        self.bookingCnoArray=[[DatabaseLib getSharedObj]getAllPassangerCnoRecords:query];
+        
+        self.bookingSpotArray=[[DatabaseLib getSharedObj]getAllPassangerSpotRecords:query];
+        
+        self.bookingSeatArray=[[DatabaseLib getSharedObj]getAllPassangerSeatRecords:query];
+        
+        [self.bookingTableView reloadData];
+    }
+    else
+    {
+        NSLog(@"Table Not deleted");
+    }
+}
 @end
